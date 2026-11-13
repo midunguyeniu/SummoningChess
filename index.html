@@ -324,7 +324,7 @@ body.portrait .costs{grid-template-columns:repeat(3,1fr)}
 
 <div class="modal" id="mMode" hidden>
   <div class="card">
-    <h2 data-i18n="m_title">Chế độ chơi</h2>
+    <h2 data-i18n="m_title">Ván mới</h2>
     <h3 data-i18n="m_vs">Đối thủ</h3>
     <div class="seg" id="segVs"><button data-v="bot" data-i18n="m_bot">Chơi với máy</button><button data-v="pvp" data-i18n="m_pvp">2 người (chung máy)</button></div>
     <div id="botOpts">
@@ -407,8 +407,8 @@ vi: {
   r_respawn: "Khi một quân bị ăn, số tài nguyên đã dùng để triệu hồi quân đó sẽ <b>sinh lại ngẫu nhiên</b> trên bàn.",
   r_credit: "Game được làm bởi Gary Duc Nguyen", m_back: "Xem lại Luật chơi",
   r_h_costs: "Giá triệu hồi", r_ok: "Đã hiểu",
-  m_title: "Chế độ chơi", m_vs: "Đối thủ", m_bot: "Chơi với máy", m_pvp: "2 người (chung máy)",
-  m_side: "Bạn cầm quân", m_white: "Trắng (đi trước)", m_black: "Đen (đi sau)", m_level: "Độ khó của máy", m_theme: "Màu bàn cờ", m_start: "Bắt đầu ván mới",
+  m_title: "Ván mới", m_vs: "Đối thủ", m_bot: "Chơi với máy", m_pvp: "2 người (chung máy)",
+  m_side: "Bạn cầm quân", m_white: "Trắng (đi trước)", m_black: "Đen (đi sau)", m_level: "Độ khó của máy", m_theme: "Màu bàn cờ", m_start: "Bắt đầu ván mới", m_forfeit: "Đầu hàng và chơi ván mới",
   lvl_easy: "★", lvl_normal: "★★", lvl_hard: "★★★", lvl_expert: "★★★★", lvl_master: "★★★★★",
   lvln_easy: "Chỉ nhìn 1 nước, hay đi ẩu và bỏ quên Vua của mình.",
   lvln_normal: "Tính trước nước đáp trả của bạn, biết giữ Vua và đòi lại quân.",
@@ -454,8 +454,8 @@ en: {
   r_respawn: "When a piece is captured, the resources spent summoning it <b>respawn at random</b> on the board.",
   r_credit: "Game made by Gary Duc Nguyen", m_back: "Back to Game rules",
   r_h_costs: "Summon costs", r_ok: "Got it",
-  m_title: "Game mode", m_vs: "Opponent", m_bot: "Play vs machine", m_pvp: "2 players (same device)",
-  m_side: "You play", m_white: "White (moves first)", m_black: "Black (moves second)", m_level: "Machine difficulty", m_theme: "Board colors", m_start: "Start new game",
+  m_title: "New Game", m_vs: "Opponent", m_bot: "Play vs machine", m_pvp: "2 players (same device)",
+  m_side: "You play", m_white: "White (moves first)", m_black: "Black (moves second)", m_level: "Machine difficulty", m_theme: "Board colors", m_start: "Start new game", m_forfeit: "Forfeit and start new game",
   lvl_easy: "★", lvl_normal: "★★", lvl_hard: "★★★", lvl_expert: "★★★★", lvl_master: "★★★★★",
   lvln_easy: "Looks only 1 move ahead, often blunders and forgets about its own King.",
   lvln_normal: "Looks ahead at your reply, protects its King and wins pieces back.",
@@ -1207,6 +1207,7 @@ function syncMode() {
   $("#botOpts").classList.toggle("off", off);
   $("#botOpts").querySelectorAll("button").forEach(b => { b.disabled = off; });
   $("#levelNote").textContent = tr("lvln_" + modeDraft.level);
+  $("#modeStart").textContent = started && !over ? tr("m_forfeit") : tr("m_start");   // đang giữa ván thì bấm là đầu hàng ván hiện tại
   previewBlank();
 }
 /* Chỉ lúc mới mở game (chưa có ván nào): bàn cờ phía sau popup đổi theo lựa chọn theme và bên cầm quân. */
