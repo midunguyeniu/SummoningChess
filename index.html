@@ -351,7 +351,7 @@ body.portrait .costs{grid-template-columns:repeat(3,1fr)}
     <div class="foot">
       <button class="btn" id="setReset" data-i18n="s_reset">Khôi phục mặc định</button>
       <button class="btn" id="setCancel" data-i18n="cancel">Huỷ</button>
-      <button class="btn primary" id="setApply" data-i18n="s_apply">Áp dụng &amp; ván mới</button>
+      <button class="btn primary" id="setApply" data-i18n="s_apply">Áp dụng cho ván mới</button>
     </div>
   </div>
 </div>
@@ -415,7 +415,7 @@ vi: {
   lvln_hard: "Tính trước 3 bước (tính cả nước đáp trả của bạn).",
   lvln_expert: "Tính trước 6 bước, mất tới ~1 giây mỗi lượt.",
   lvln_master: "Tính trước tối đa 10 bước, mất tới ~4 giây mỗi lượt.",
-  s_title: "Cân bằng", s_note: "Thay đổi sẽ áp dụng cho ván mới.", s_reset: "Khôi phục mặc định", s_apply: "Áp dụng & ván mới",
+  s_title: "Cân bằng", s_note: "Thay đổi sẽ áp dụng cho ván mới.", s_reset: "Khôi phục mặc định", s_apply: "Áp dụng cho ván mới", l_pending: "Đã lưu cài đặt cân bằng. Sẽ áp dụng từ ván mới.",
   s_h_start: "Tài nguyên sinh ngẫu nhiên đầu ván", s_h_cost: "Giá triệu hồi", s_h_extra: "Luật phụ",
   s_stand: "Quân thường (không phải Vua) được dừng lại trên ô tài nguyên", s_pawn: "Tốt được đi 2 ô ở nước đi đầu tiên", s_pawnres: "Tốt (chỉ Tốt) được đứng trên ô tài nguyên", s_pawnback: "Tốt được lùi 1 ô (không phong cấp)",
   warn60: "⚠ Tổng tài nguyên đầu ván tối đa 60 (bàn chỉ có 62 ô trống).",
@@ -462,7 +462,7 @@ en: {
   lvln_hard: "Looks 3 steps ahead (counting your replies).",
   lvln_expert: "Looks 6 steps ahead, takes up to ~1 second per turn.",
   lvln_master: "Looks up to 10 steps ahead, takes up to ~4 seconds per turn.",
-  s_title: "Balance", s_note: "Changes apply to the next new game.", s_reset: "Reset to default", s_apply: "Apply & new game",
+  s_title: "Balance", s_note: "Changes apply to the next new game.", s_reset: "Reset to default", s_apply: "Apply for next new game", l_pending: "Balance settings saved. They will apply from the next new game.",
   s_h_start: "Resources placed randomly at the start", s_h_cost: "Summon costs", s_h_extra: "Extra rules",
   s_stand: "Regular pieces (not the King) may stop on resource squares", s_pawn: "Pawns may move 2 squares on their first move", s_pawnres: "Pawns (only pawns) may stand on resource squares", s_pawnback: "Pawns may step back 1 square (no promotion)",
   warn60: "⚠ Starting resources total at most 60 (the board has only 62 free squares).",
@@ -581,7 +581,9 @@ function applyTheme() {
 }
 /* newGame(true) = chỉ dựng bàn trống (lúc mới mở game): chưa đặt Vua, chưa rải tài nguyên, chưa cho máy đi. */
 let started = false;
+let PENDING = null;   // cân bằng đã chỉnh nhưng chưa áp dụng: chờ ván hiện tại kết thúc hoặc bấm Ván mới
 function newGame(blank) {
+  if (PENDING) { CONFIG = PENDING; PENDING = null; }
   started = !blank;
   applyTheme();
   gameId++; clearTimeout(botTimer); botSeen.clear();
@@ -1169,21 +1171,21 @@ function fillRules() {
   $("#rulesCosts").innerHTML = SUMMONABLE.map(t => `<div class="cbox"><div class="ptile"><img src="${pieceSprite(t, "white")}" style="--k:${PIECE_K[t]}" alt=""></div><b>${PNAME[t]}</b><div class="cost">${RES.filter(k => costOf(t)[k]).map(k => `<span class="chip">${ico(k)}${costOf(t)[k] > 1 ? "×" + costOf(t)[k] : ""}</span>`).join("")}</div></div>`).join("");
 }
 function openRules() { fillRules(); $("#mRules").hidden = false; }
-function openSettings() {
+function openSettings(cfg = PENDING || CONFIG) {
   const num = (name, v, max) => `<input type="number" min="0" max="${max}" name="${name}" value="${v}">`;
   $("#setForm").innerHTML = `
     <h3>${tr("s_h_start")}</h3>
-    <div class="grid3">${RES.map(k => `<label>${ico(k)} ${RES_NAME[k]} ${num("start-" + k, CONFIG.startRes[k], 40)}</label>`).join("")}</div>
+    <div class="grid3">${RES.map(k => `<label>${ico(k)} ${RES_NAME[k]} ${num("start-" + k, cfg.startRes[k], 40)}</label>`).join("")}</div>
     <p class="note" id="setWarn"></p>
     <h3>${tr("s_h_cost")}</h3>
     <table class="costtbl"><tr><th></th>${RES.map(k => `<th>${ico(k)}</th>`).join("")}</tr>
-    ${SUMMONABLE.map(t => `<tr><td><span class="ptile"><img src="${pieceSprite(t, "white")}" style="--k:${PIECE_K[t]}" alt=""></span>${PNAME[t]}</td>${RES.map(k => `<td>${num("cost-" + t + "-" + k, CONFIG.costs[t][k] || 0, 9)}</td>`).join("")}</tr>`).join("")}
+    ${SUMMONABLE.map(t => `<tr><td><span class="ptile"><img src="${pieceSprite(t, "white")}" style="--k:${PIECE_K[t]}" alt=""></span>${PNAME[t]}</td>${RES.map(k => `<td>${num("cost-" + t + "-" + k, cfg.costs[t][k] || 0, 9)}</td>`).join("")}</tr>`).join("")}
     </table>
     <h3>${tr("s_h_extra")}</h3>
-    <label class="chk"><input type="checkbox" name="standOnRes" ${CONFIG.standOnRes ? "checked" : ""}> ${tr("s_stand")}</label>
-    <label class="chk"><input type="checkbox" name="pawnDouble" ${CONFIG.pawnDouble ? "checked" : ""}> ${tr("s_pawn")}</label>
-    <label class="chk"><input type="checkbox" name="pawnOnRes" ${CONFIG.pawnOnRes ? "checked" : ""}> ${tr("s_pawnres")}</label>
-    <label class="chk"><input type="checkbox" name="pawnBack" ${CONFIG.pawnBack ? "checked" : ""}> ${tr("s_pawnback")}</label>`;
+    <label class="chk"><input type="checkbox" name="standOnRes" ${cfg.standOnRes ? "checked" : ""}> ${tr("s_stand")}</label>
+    <label class="chk"><input type="checkbox" name="pawnDouble" ${cfg.pawnDouble ? "checked" : ""}> ${tr("s_pawn")}</label>
+    <label class="chk"><input type="checkbox" name="pawnOnRes" ${cfg.pawnOnRes ? "checked" : ""}> ${tr("s_pawnres")}</label>
+    <label class="chk"><input type="checkbox" name="pawnBack" ${cfg.pawnBack ? "checked" : ""}> ${tr("s_pawnback")}</label>`;
   $("#mSettings").hidden = false;
 }
 function readSettings() {
@@ -1265,13 +1267,15 @@ $("#goView").addEventListener("click", () => { overDismissed = true; renderOver(
 $("#btnRules").addEventListener("click", () => { returnToMode = false; openRules(); });
 let returnToMode = true;   // lần mở đầu (hoặc quay lại từ bảng chế độ): bấm "Đã hiểu" xong thì hiện bảng chọn chế độ
 $("#rulesOk").addEventListener("click", () => { $("#mRules").hidden = true; if (returnToMode) { returnToMode = false; openMode(); } });
-$("#btnSettings").addEventListener("click", openSettings);
+$("#btnSettings").addEventListener("click", () => openSettings());
 $("#setCancel").addEventListener("click", () => { $("#mSettings").hidden = true; });
-$("#setReset").addEventListener("click", () => { CONFIG = clone(CONFIG_DEFAULT); openSettings(); });
+$("#setReset").addEventListener("click", () => openSettings(CONFIG_DEFAULT));   // chỉ điền lại form, chưa áp dụng gì
 $("#setApply").addEventListener("click", () => {
   const cfg = readSettings(), total = RES.reduce((s, k) => s + cfg.startRes[k], 0);
   if (total > 60) { $("#setWarn").textContent = tr("warn60"); return; }
-  CONFIG = cfg; $("#mSettings").hidden = true; newGame();
+  $("#mSettings").hidden = true;
+  if (!started || over) { CONFIG = cfg; PENDING = null; fillRules(); render(); }   // không có ván nào đang chạy: áp dụng luôn
+  else { PENDING = cfg; logMsg(() => tr("l_pending"), "sys"); render(); }          // đang giữa ván: để dành cho ván sau
 });
 document.querySelectorAll(".modal").forEach(m => m.addEventListener("mousedown", e => { if (e.target === m && !(m.id === "mMode" && !started)) m.hidden = true; }));
 window.addEventListener("resize", fit);
