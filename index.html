@@ -240,19 +240,22 @@ kbd{background:#3a2c18;border:1px solid var(--line);border-radius:5px;padding:1p
 #segLevel button.on[data-v="hard"]{background:#3d8bff;border-color:#3d8bff;color:#fff}
 #segLevel button.on[data-v="expert"]{background:#e5453b;border-color:#e5453b;color:#fff}
 #segLevel button.on[data-v="master"]{background:#9b59e0;border-color:#9b59e0;color:#fff}
-@media (max-width:600px){#segLevel button{flex:1 1 calc((100% - 16px) / 3)}}   /* điện thoại: 3 sao ở dòng trên, 4-5 sao xuống dòng dưới */
+@media (max-width:600px){#segLevel{justify-content:center}#segLevel button{flex:0 0 calc((100% - 16px) / 3)}}   /* điện thoại: 3 sao ở dòng trên, 4-5 sao xuống dòng dưới, cùng cỡ và canh giữa */
 .seg button:disabled{cursor:not-allowed;pointer-events:none}
 .seg button.on{background:var(--gold);color:#3a2a00;border-color:var(--gold)}
 
 /* portrait / mobile */
 body.portrait .top{margin-bottom:8px}
-body.portrait .brand h1{font-size:17px}
+body.portrait .brand{display:none}   /* mobile: bỏ tên game để tiết kiệm chỗ */
 body.portrait #status{font-size:13px;margin-bottom:8px}
+/* mobile: khung trạng thái cao cố định (đủ 3 dòng) để bàn cờ không nhảy lên xuống khi chữ trạng thái dài/ngắn khác nhau */
+body.portrait #status{height:68px;min-height:68px;box-sizing:border-box;padding-top:6px;padding-bottom:6px}
+body.portrait #statusText{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 body.portrait #stage{flex-direction:column;align-items:center;gap:10px}
 body.portrait .side{display:contents}
 body.portrait #panel-black{order:1} body.portrait #boardWrap{order:2} body.portrait #panel-white{order:3} body.portrait #mid{order:4}
 body.portrait.flip #panel-white{order:1} body.portrait.flip #panel-black{order:3}
-body.portrait .panel{width:calc(var(--cell)*8);min-height:0;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto;padding:8px 10px}
+body.portrait .panel{width:100%;box-sizing:border-box;min-height:0;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto;padding:8px 10px}
 body.portrait .p-head{grid-column:1/-1}
 body.portrait .counters{flex-direction:row;grid-column:1/-1;gap:12px;justify-content:space-between}
 body.portrait .counter img{width:30px;height:30px} body.portrait .counter b{font-size:22px}
