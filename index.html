@@ -397,11 +397,11 @@ vi: {
   b_rules: "Luật chơi", b_settings: "Cân bằng", b_new: "Ván mới", b_view: "Xem bàn cờ", cancel: "Huỷ",
   r_intro: "Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với máy; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.",
   r_h_turn: "Mỗi lượt chọn 1 trong 2",
-  r_move: "<b>Đi quân</b>: nhấp quân của mình → nhấp ô đích (có chấm xanh). Các quân đi như cờ vua truyền thống.",
+  r_move: "<b>Đi quân</b>: nhấp quân của mình → nhấp ô đích (có chấm xanh). Các quân đi như cờ vua truyền thống; riêng <b>Tốt</b> còn được lùi 1 ô (không phong cấp).",
   r_summon: "<b>Triệu hồi</b>: nhấp quân trong bảng của mình (cần đủ tài nguyên) → nhấp 1 trong 8 ô trống quanh Vua. Triệu hồi tốn trọn 1 lượt.",
   r_h_res: "Tài nguyên",
   r_start: "Đầu ván sinh ngẫu nhiên trên bàn: <b id=\"rulesStart\"></b>.",
-  r_only: "<b>Chỉ Vua</b> mới ăn được tài nguyên (đi vào ô có tài nguyên). Quân khác đi xuyên qua tài nguyên nhưng <b>không dừng lại</b> trên ô đó.",
+  r_only: "<b>Chỉ Vua</b> mới ăn được tài nguyên (đi vào ô có tài nguyên). Quân khác đi xuyên qua tài nguyên nhưng <b>không dừng lại</b> trên ô đó (trừ <b>Tốt</b>: được đứng lên, tài nguyên vẫn nằm yên dưới Tốt).",
   r_public: "Bảng đếm của cả hai bên luôn hiển thị công khai.",
   r_respawn: "Khi một quân bị ăn, số tài nguyên đã dùng để triệu hồi quân đó sẽ <b>sinh lại ngẫu nhiên</b> trên bàn.",
   r_credit: "Game được làm bởi Gary Duc Nguyen", m_back: "Xem lại Luật chơi",
@@ -416,7 +416,7 @@ vi: {
   lvln_master: "Tính trước tối đa 10 bước, mất tới ~4 giây mỗi lượt.",
   s_title: "Cân bằng", s_note: "Thay đổi sẽ áp dụng cho ván mới.", s_reset: "Khôi phục mặc định", s_apply: "Áp dụng & ván mới",
   s_h_start: "Tài nguyên sinh ngẫu nhiên đầu ván", s_h_cost: "Giá triệu hồi", s_h_extra: "Luật phụ",
-  s_stand: "Quân thường (không phải Vua) được dừng lại trên ô tài nguyên", s_pawn: "Tốt được đi 2 ô ở nước đi đầu tiên",
+  s_stand: "Quân thường (không phải Vua) được dừng lại trên ô tài nguyên", s_pawn: "Tốt được đi 2 ô ở nước đi đầu tiên", s_pawnres: "Tốt (chỉ Tốt) được đứng trên ô tài nguyên", s_pawnback: "Tốt được lùi 1 ô (không phong cấp)",
   warn60: "⚠ Tổng tài nguyên đầu ván tối đa 60 (bàn chỉ có 62 ô trống).",
   pn: "{0} {1}",
   n_K: "Vua", n_Q: "Hậu", n_R: "Xe", n_B: "Tượng", n_N: "Mã", n_P: "Tốt", n_white: "Trắng", n_black: "Đen",
@@ -444,11 +444,11 @@ en: {
   b_rules: "Rules", b_settings: "Balance", b_new: "New game", b_view: "View board", cancel: "Cancel",
   r_intro: "By default you play White (at the bottom of the board) against the machine; change side, difficulty, or play 2 players on one device when you press <b>New game</b>. Each side starts with just <b>1 King</b>. Collect resources to summon pieces, and <b>capture the enemy King</b> to win.",
   r_h_turn: "Each turn, choose 1 of 2",
-  r_move: "<b>Move</b>: click one of your pieces → click a destination square (green dot). Pieces move like in traditional chess.",
+  r_move: "<b>Move</b>: click one of your pieces → click a destination square (green dot). Pieces move like in traditional chess; the <b>Pawn</b> may also step back 1 square (no promotion).",
   r_summon: "<b>Summon</b>: click a piece in your panel (you need enough resources) → click 1 of the 8 empty squares around your King. Summoning takes your whole turn.",
   r_h_res: "Resources",
   r_start: "At the start, resources are placed randomly on the board: <b id=\"rulesStart\"></b>.",
-  r_only: "<b>Only the King</b> can collect resources (by moving onto their square). Other pieces pass through resources but <b>cannot stop</b> on them.",
+  r_only: "<b>Only the King</b> can collect resources (by moving onto their square). Other pieces pass through resources but <b>cannot stop</b> on them (except the <b>Pawn</b>, which may stand on one; the resource stays under it).",
   r_public: "Both sides' counters are always public.",
   r_respawn: "When a piece is captured, the resources spent summoning it <b>respawn at random</b> on the board.",
   r_credit: "Game made by Gary Duc Nguyen", m_back: "Back to Game rules",
@@ -463,7 +463,7 @@ en: {
   lvln_master: "Looks up to 10 steps ahead, takes up to ~4 seconds per turn.",
   s_title: "Balance", s_note: "Changes apply to the next new game.", s_reset: "Reset to default", s_apply: "Apply & new game",
   s_h_start: "Resources placed randomly at the start", s_h_cost: "Summon costs", s_h_extra: "Extra rules",
-  s_stand: "Regular pieces (not the King) may stop on resource squares", s_pawn: "Pawns may move 2 squares on their first move",
+  s_stand: "Regular pieces (not the King) may stop on resource squares", s_pawn: "Pawns may move 2 squares on their first move", s_pawnres: "Pawns (only pawns) may stand on resource squares", s_pawnback: "Pawns may step back 1 square (no promotion)",
   warn60: "⚠ Starting resources total at most 60 (the board has only 62 free squares).",
   pn: "{1} {0}",
   n_K: "King", n_Q: "Queen", n_R: "Rook", n_B: "Bishop", n_N: "Knight", n_P: "Pawn", n_white: "White", n_black: "Black",
@@ -523,6 +523,8 @@ const CONFIG_DEFAULT = {
   },
   standOnRes: false,  // quân thường có được đứng lại trên ô tài nguyên không
   pawnDouble: true,   // Tốt đi 2 ô ở nước đầu tiên
+  pawnOnRes: true,    // Tốt (chỉ Tốt) được đứng lại trên ô tài nguyên; tài nguyên vẫn nằm yên dưới Tốt
+  pawnBack: true,     // Tốt được lùi 1 ô (chỉ để đi, không ăn quân khi lùi); không có phong cấp
 };
 let CONFIG = clone(CONFIG_DEFAULT);
 /* vân gỗ rất nhẹ phủ lên ô cờ (chỉ theme gỗ): sọc dọc mảnh + chuyển sáng tối từ trên xuống */
@@ -622,10 +624,12 @@ function movesFor(pc) {
     }
   } else if (type === "P") {
     const dir = color === "white" ? 1 : -1, r1 = r + dir;
-    if (inb(r1, c) && canStand(B[r1][c])) push(r1, c, "move");
+    const stand = cell => !cell.p && (CONFIG.pawnOnRes || canStand(cell));   // Tốt có thể được phép đứng trên ô tài nguyên
+    if (inb(r1, c) && stand(B[r1][c])) push(r1, c, "move");
     if (CONFIG.pawnDouble && !pc.moved && inb(r1, c) && !B[r1][c].p) {   // ô giữa: được đi xuyên tài nguyên
-      const r2 = r + 2 * dir; if (inb(r2, c) && canStand(B[r2][c])) push(r2, c, "move");
+      const r2 = r + 2 * dir; if (inb(r2, c) && stand(B[r2][c])) push(r2, c, "move");
     }
+    if (CONFIG.pawnBack && inb(r - dir, c) && stand(B[r - dir][c])) push(r - dir, c, "move");   // lùi 1 ô
     for (const dc of [-1, 1]) {
       const nc = c + dc; if (!inb(r1, nc)) continue;
       const cell = B[r1][nc]; if (cell.p && cell.p.color === foe) push(r1, nc, "capture");
@@ -1176,7 +1180,9 @@ function openSettings() {
     </table>
     <h3>${tr("s_h_extra")}</h3>
     <label class="chk"><input type="checkbox" name="standOnRes" ${CONFIG.standOnRes ? "checked" : ""}> ${tr("s_stand")}</label>
-    <label class="chk"><input type="checkbox" name="pawnDouble" ${CONFIG.pawnDouble ? "checked" : ""}> ${tr("s_pawn")}</label>`;
+    <label class="chk"><input type="checkbox" name="pawnDouble" ${CONFIG.pawnDouble ? "checked" : ""}> ${tr("s_pawn")}</label>
+    <label class="chk"><input type="checkbox" name="pawnOnRes" ${CONFIG.pawnOnRes ? "checked" : ""}> ${tr("s_pawnres")}</label>
+    <label class="chk"><input type="checkbox" name="pawnBack" ${CONFIG.pawnBack ? "checked" : ""}> ${tr("s_pawnback")}</label>`;
   $("#mSettings").hidden = false;
 }
 function readSettings() {
@@ -1186,6 +1192,8 @@ function readSettings() {
   for (const t of SUMMONABLE) { cfg.costs[t] = {}; for (const k of RES) { const n = v("cost-" + t + "-" + k); if (n) cfg.costs[t][k] = n; } }
   cfg.standOnRes = f.querySelector('[name="standOnRes"]').checked;
   cfg.pawnDouble = f.querySelector('[name="pawnDouble"]').checked;
+  cfg.pawnOnRes = f.querySelector('[name="pawnOnRes"]').checked;
+  cfg.pawnBack = f.querySelector('[name="pawnBack"]').checked;
   return cfg;
 }
 

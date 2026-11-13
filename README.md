@@ -24,13 +24,13 @@ Win by **capturing the enemy King**, or by **checkmate** (see below).
 
 ### Each turn, choose 1 of 2
 
-1. **Move** one of your pieces. Pieces move like in traditional chess (the Pawn may also move 2 squares on its first move).
+1. **Move** one of your pieces. Pieces move like in traditional chess. The Pawn may also move 2 squares on its first move, and may **step back 1 square** (it never captures backwards, and there is no promotion).
 2. **Summon** a new piece (Pawn, Rook, Knight, Bishop or Queen) onto an empty square next to your King, paying with resources. Summoning takes your whole turn.
 
 ### Resources
 
 - **Only the King** collects resources, by moving onto their square.
-- Other pieces can pass through a resource square but **cannot stop** on it.
+- Other pieces can pass through a resource square but **cannot stop** on it. The exception is the **Pawn**: it may stand on a resource square, and the resource stays under it (a King that captures that Pawn collects it).
 - Both sides' resource counters are always public.
 - When a piece (not a King) is captured, the resources spent summoning it **respawn at random** on the board.
 
@@ -80,13 +80,13 @@ Thắng bằng cách **ăn Vua đối phương**, hoặc **chiếu hết** (xem 
 
 ### Mỗi lượt chọn 1 trong 2
 
-1. **Đi quân**: đi một quân của mình. Các quân đi như cờ vua truyền thống (Tốt được đi 2 ô ở nước đầu tiên).
+1. **Đi quân**: đi một quân của mình. Các quân đi như cờ vua truyền thống. Tốt còn được đi 2 ô ở nước đầu tiên và được **lùi 1 ô** (không ăn quân khi lùi, không có phong cấp).
 2. **Triệu hồi**: đặt một quân mới (Tốt, Xe, Mã, Tượng hoặc Hậu) vào ô trống cạnh Vua, trả bằng tài nguyên. Triệu hồi tốn trọn 1 lượt.
 
 ### Tài nguyên
 
 - **Chỉ Vua** mới ăn được tài nguyên, bằng cách đi vào ô có tài nguyên.
-- Quân khác đi xuyên qua ô tài nguyên được nhưng **không dừng lại** trên ô đó.
+- Quân khác đi xuyên qua ô tài nguyên được nhưng **không dừng lại** trên ô đó. Ngoại lệ là **Tốt**: Tốt được đứng trên ô tài nguyên, tài nguyên vẫn nằm yên dưới Tốt (Vua ăn được Tốt đó sẽ thu luôn tài nguyên).
 - Bảng đếm tài nguyên của cả hai bên luôn hiển thị công khai.
 - Khi một quân (không phải Vua) bị ăn, số tài nguyên đã dùng để triệu hồi quân đó sẽ **sinh lại ngẫu nhiên** trên bàn.
 
