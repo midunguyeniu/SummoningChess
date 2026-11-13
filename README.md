@@ -10,7 +10,7 @@
 
 ## English
 
-A chess variant played in the browser. Each side starts with only a **King**. Collect resources, **summon** new pieces next to your King, and **capture the enemy King** to win. Play against the machine or with 2 players on one device.
+A chess variant played in the browser. Each side starts with only a **King**. Collect resources, **summon** new pieces next to your King, and **capture the enemy King** to win. Play against the AI or with 2 players on one device.
 
 ### Goal
 
@@ -46,7 +46,7 @@ Win by **capturing the enemy King**, or by **checkmate** (see below).
 
 ### King safety, check and checkmate
 
-- A **human player's King cannot step onto a square the opponent can capture right away.** The machine's King and all other pieces have no such limit.
+- A **human player's King cannot step onto a square the opponent can capture right away.** The AI's King and all other pieces have no such limit.
 - When a King is under threat, a **CHECK** label shows on it.
 - If the side to move has **no way left to save its King** (no move, capture or summon that stops the threat), it is **CHECKMATE** and the game ends immediately.
 
@@ -57,16 +57,16 @@ Win by **capturing the enemy King**, or by **checkmate** (see below).
 
 ### Game modes
 
-- **Opponent:** play against the machine, or 2 players on one device.
+- **Opponent:** play against the AI, or 2 players on one device.
 - **Your side:** White (moves first) or Black.
-- **Machine difficulty** (how many moves it looks ahead): Easy (1), Normal (2), Hard (3), Expert (6), Master (10). Higher levels may take a few seconds per move.
+- **AI difficulty** (how many moves it looks ahead): ★ (1), ★★ (2), ★★★ (3), ★★★★ (6), ★★★★★ (10). Higher levels may take a few seconds per move.
 - **Board theme:** 4 color themes. Language: Vietnamese or English (flag buttons).
 
 ---
 
 ## Tiếng Việt
 
-Một biến thể cờ vua chơi trên trình duyệt. Mỗi bên bắt đầu chỉ với **1 Vua**. Hãy thu thập tài nguyên, **triệu hồi** quân mới ngay cạnh Vua và **ăn Vua đối phương** để thắng. Chơi với máy hoặc 2 người chung một máy.
+Một biến thể cờ vua chơi trên trình duyệt. Mỗi bên bắt đầu chỉ với **1 Vua**. Hãy thu thập tài nguyên, **triệu hồi** quân mới ngay cạnh Vua và **ăn Vua đối phương** để thắng. Chơi với AI hoặc 2 người chung một máy.
 
 ### Mục tiêu
 
@@ -102,7 +102,7 @@ Thắng bằng cách **ăn Vua đối phương**, hoặc **chiếu hết** (xem 
 
 ### An toàn của Vua, chiếu và chiếu hết
 
-- **Vua của người chơi không được đi vào ô mà đối thủ ăn được ngay.** Vua của máy và các quân khác không bị giới hạn này.
+- **Vua của người chơi không được đi vào ô mà đối thủ ăn được ngay.** Vua của AI và các quân khác không bị giới hạn này.
 - Khi Vua bị đe doạ, trên Vua hiện nhãn **CHECK**.
 - Nếu bên tới lượt **không còn cách nào cứu Vua** (không có nước đi, ăn quân hay triệu hồi nào chặn được mối đe doạ) thì là **CHIẾU HẾT** và ván kết thúc ngay.
 
@@ -113,7 +113,7 @@ Thắng bằng cách **ăn Vua đối phương**, hoặc **chiếu hết** (xem 
 
 ### Chế độ chơi
 
-- **Đối thủ:** chơi với máy, hoặc 2 người chung một máy.
+- **Đối thủ:** chơi với AI, hoặc 2 người chung một máy.
 - **Bạn cầm quân:** Trắng (đi trước) hoặc Đen.
-- **Độ khó của máy** (số nước máy tính trước): Dễ (1), Thường (2), Khó (3), Expert (6), Master (10). Mức cao có thể mất vài giây mỗi nước.
+- **Độ khó của AI** (số nước AI tính trước): ★ (1), ★★ (2), ★★★ (3), ★★★★ (6), ★★★★★ (10). Mức cao có thể mất vài giây mỗi nước.
 - **Màu bàn cờ:** 4 theme. Ngôn ngữ: Tiếng Việt hoặc English (nút cờ).

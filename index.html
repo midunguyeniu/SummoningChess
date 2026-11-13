@@ -319,7 +319,7 @@ body.portrait .cbox{flex:0 0 calc((100% - 16px) / 3);min-width:0}
   <div class="card">
     <div class="langsw" id="langSw"><button data-lang="vi" title="Tiếng Việt" aria-label="Tiếng Việt"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#da251d"/><polygon fill="#ffff00" points="50,23 56.76,43.7 78.53,43.73 60.94,56.55 67.63,77.27 50,64.5 32.37,77.27 39.06,56.55 21.47,43.73 43.24,43.7"/></svg></button><button data-lang="en" title="English" aria-label="English"><svg viewBox="15 0 30 30" aria-hidden="true"><clipPath id="ukS"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="ukT"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#ukS)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg></button></div>
     <h2 data-i18n="brand">Cờ Vua Triệu Hồi</h2>
-    <p data-i18n="r_intro">Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với máy; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.</p>
+    <p data-i18n="r_intro">Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với AI; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.</p>
     <h3 data-i18n="r_h_turn">Mỗi lượt chọn 1 trong 2</h3>
     <ul>
       <li data-i18n="r_move"><b>Đi quân</b>: nhấp quân của mình → nhấp ô đích (có chấm xanh). Các quân đi như cờ vua truyền thống.</li>
@@ -342,11 +342,11 @@ body.portrait .cbox{flex:0 0 calc((100% - 16px) / 3);min-width:0}
   <div class="card">
     <h2 data-i18n="m_title">Ván mới</h2>
     <h3 data-i18n="m_vs">Đối thủ</h3>
-    <div class="seg" id="segVs"><button data-v="bot" data-i18n="m_bot">Chơi với máy</button><button data-v="pvp" data-i18n="m_pvp">2 người (chung máy)</button></div>
+    <div class="seg" id="segVs"><button data-v="bot" data-i18n="m_bot">Chơi với AI</button><button data-v="pvp" data-i18n="m_pvp">2 người (chung máy)</button></div>
     <div id="botOpts">
       <h3 data-i18n="m_side">Bạn cầm quân</h3>
       <div class="seg" id="segSide"><button data-v="white" data-i18n="m_white">Trắng (đi trước)</button><button data-v="black" data-i18n="m_black">Đen (đi sau)</button></div>
-      <h3 data-i18n="m_level">Độ khó của máy</h3>
+      <h3 data-i18n="m_level">Độ khó của AI</h3>
       <div class="seg" id="segLevel"><button data-v="easy" data-i18n="lvl_easy">★</button><button data-v="normal" data-i18n="lvl_normal">★★</button><button data-v="hard" data-i18n="lvl_hard">★★★</button><button data-v="expert" data-i18n="lvl_expert">★★★★</button><button data-v="master" data-i18n="lvl_master">★★★★★</button></div>
       <p class="note" id="levelNote"></p>
     </div>
@@ -450,7 +450,7 @@ const I18N = {
 vi: {
   title: "Cờ Vua Triệu Hồi", brand: "Cờ Vua Triệu Hồi",
   b_rules: "Luật chơi", b_settings: "Cân bằng", b_new: "Ván mới", b_view: "Xem bàn cờ", cancel: "Huỷ",
-  r_intro: "Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với máy; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.",
+  r_intro: "Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với AI; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.",
   r_h_turn: "Mỗi lượt chọn 1 trong 2",
   r_move: "<b>Đi quân</b>: nhấp quân của mình → nhấp ô đích (có chấm xanh). Các quân đi như cờ vua truyền thống; riêng <b>Tốt</b> còn được lùi 1 ô (không phong cấp).",
   r_summon: "<b>Triệu hồi</b>: nhấp quân trong bảng của mình (cần đủ tài nguyên) → nhấp 1 trong 8 ô trống quanh Vua. Triệu hồi tốn trọn 1 lượt.",
@@ -461,8 +461,8 @@ vi: {
   r_respawn: "Khi một quân bị ăn, số tài nguyên đã dùng để triệu hồi quân đó sẽ <b>sinh lại ngẫu nhiên</b> trên bàn.",
   r_credit: "Game được làm bởi Gary Duc Nguyen", m_back: "Xem lại Luật chơi",
   r_h_costs: "Giá triệu hồi", r_ok: "Đã hiểu",
-  m_title: "Ván mới", m_vs: "Đối thủ", m_bot: "Chơi với máy", m_pvp: "2 người (chung máy)",
-  m_side: "Bạn cầm quân", m_white: "Trắng (đi trước)", m_black: "Đen (đi sau)", m_level: "Độ khó của máy", m_theme: "Màu bàn cờ", m_start: "Bắt đầu ván mới", m_forfeit: "Đầu hàng và chơi ván mới",
+  m_title: "Ván mới", m_vs: "Đối thủ", m_bot: "Chơi với AI", m_pvp: "2 người (chung máy)",
+  m_side: "Bạn cầm quân", m_white: "Trắng (đi trước)", m_black: "Đen (đi sau)", m_level: "Độ khó của AI", m_theme: "Màu bàn cờ", m_start: "Bắt đầu ván mới", m_forfeit: "Đầu hàng và chơi ván mới",
   lvl_easy: "★", lvl_normal: "★★", lvl_hard: "★★★", lvl_expert: "★★★★", lvl_master: "★★★★★",
   lvln_easy: "Chỉ nhìn 1 nước, hay đi ẩu và bỏ quên Vua của mình.",
   lvln_normal: "Tính trước nước đáp trả của bạn, biết giữ Vua và đòi lại quân.",
@@ -476,20 +476,20 @@ vi: {
   pn: "{0} {1}",
   n_K: "Vua", n_Q: "Hậu", n_R: "Xe", n_B: "Tượng", n_N: "Mã", n_P: "Tốt", n_white: "Trắng", n_black: "Đen",
   n_meat: "thịt", n_stone: "đá", n_rice: "gạo",
-  p_title: "Quân {0}", role_bot: "MÁY ({0})", role_you: "BẠN", bd_win: "THẮNG", bd_think: "SUY NGHĨ…", bd_turn: "ĐANG ĐI", bd_wait: "CHỜ",
+  p_title: "Quân {0}", role_bot: "AI ({0})", role_you: "BẠN", bd_win: "THẮNG", bd_think: "SUY NGHĨ…", bd_turn: "ĐANG ĐI", bd_wait: "CHỜ",
   ttl_poor: "Chưa đủ tài nguyên", ttl_nocell: "Không có ô trống quanh Vua", ttl_summon: "Triệu hồi {0}",
   st_notstarted: "<b>Chưa bắt đầu</b> · Bấm <b>Ván mới</b> để chọn chế độ và bắt đầu chơi",
   st_win: "<b>{0} thắng</b> — đã ăn {1}!", st_mate: "<b>{0} thắng</b> — chiếu hết {1}!", st_draw: "<b>Hoà</b> — không bên nào còn nước đi.",
-  st_bot: "<b>Lượt MÁY ({0})</b> · đang suy nghĩ…",
+  st_bot: "<b>Lượt AI ({0})</b> · đang suy nghĩ…",
   st_summon: "<b>Lượt {0}</b> · Chọn ô trống quanh Vua để đặt <b>{1}</b> <span class=\"muted\">(Esc: huỷ)</span>",
   st_sel: "<b>Lượt {0}</b> · Chọn ô đích cho <b>{1}</b> <span class=\"muted\">(Esc: huỷ)</span>",
   st_nomove: "<b>Lượt {0}</b> · <b>{1}</b> chưa có nước đi <span class=\"muted\">(Esc: huỷ)</span>",
   st_idle: "<b>Lượt {0}</b> · Chọn quân để đi, hoặc bấm quân ở bảng bên để triệu hồi <span class=\"muted\">(tốn 1 lượt)</span>",
   w_mate: "⚠ Chiếu hết — không còn cách cứu Vua!", w_check: "⚠ Vua đang bị đe doạ!",
   tl_board: "Trên bàn:", tl_move: "Nước thứ {0}",
-  go_you: "BẠN THẮNG!", go_bot: "MÁY THẮNG!", go_side: "{0} THẮNG!", go_draw: "HOÀ",
+  go_you: "BẠN THẮNG!", go_bot: "AI THẮNG!", go_side: "{0} THẮNG!", go_draw: "HOÀ",
   gs_win: "{0} đã bị ăn ở nước thứ {1}.", gs_mate: "{0} bị chiếu hết ở nước thứ {1}.", gs_draw: "Không bên nào còn nước đi.",
-  l_new_bot: "Ván mới — bạn cầm {0}, máy cầm {1} ({2}). Trắng đi trước.", l_new_pvp: "Ván mới — 2 người. Trắng đi trước.",
+  l_new_bot: "Ván mới — bạn cầm {0}, AI cầm {1} ({2}). Trắng đi trước.", l_new_pvp: "Ván mới — 2 người. Trắng đi trước.",
   l_eatres: "{0} ăn 1 {1}", l_cap: "{0} ăn {1}", l_resp: " → sinh lại {0} trên bàn", l_move: "{0} di chuyển",
   l_kcap: "{0} ăn {1} — {2} thắng!", l_mate: "Chiếu hết — {0} thắng!", l_summon: "{0} triệu hồi {1} (−{2})",
   l_skip: "{0} không còn nước đi — bỏ lượt", l_draw: "Hoà — không bên nào còn nước đi."
@@ -497,7 +497,7 @@ vi: {
 en: {
   title: "Summoning Chess", brand: "Summoning Chess",
   b_rules: "Rules", b_settings: "Balance", b_new: "New game", b_view: "View board", cancel: "Cancel",
-  r_intro: "By default you play White (at the bottom of the board) against the machine; change side, difficulty, or play 2 players on one device when you press <b>New game</b>. Each side starts with just <b>1 King</b>. Collect resources to summon pieces, and <b>capture the enemy King</b> to win.",
+  r_intro: "By default you play White (at the bottom of the board) against the AI; change side, difficulty, or play 2 players on one device when you press <b>New game</b>. Each side starts with just <b>1 King</b>. Collect resources to summon pieces, and <b>capture the enemy King</b> to win.",
   r_h_turn: "Each turn, choose 1 of 2",
   r_move: "<b>Move</b>: click one of your pieces → click a destination square (green dot). Pieces move like in traditional chess; the <b>Pawn</b> may also step back 1 square (no promotion).",
   r_summon: "<b>Summon</b>: click a piece in your panel (you need enough resources) → click 1 of the 8 empty squares around your King. Summoning takes your whole turn.",
@@ -508,8 +508,8 @@ en: {
   r_respawn: "When a piece is captured, the resources spent summoning it <b>respawn at random</b> on the board.",
   r_credit: "Game made by Gary Duc Nguyen", m_back: "Back to Game rules",
   r_h_costs: "Summon costs", r_ok: "Got it",
-  m_title: "New Game", m_vs: "Opponent", m_bot: "Play vs machine", m_pvp: "2 players (same device)",
-  m_side: "You play", m_white: "White (moves first)", m_black: "Black (moves second)", m_level: "Machine difficulty", m_theme: "Board colors", m_start: "Start new game", m_forfeit: "Forfeit and start new game",
+  m_title: "New Game", m_vs: "Opponent", m_bot: "Play vs AI", m_pvp: "2 players (same device)",
+  m_side: "You play", m_white: "White (moves first)", m_black: "Black (moves second)", m_level: "AI difficulty", m_theme: "Board colors", m_start: "Start new game", m_forfeit: "Forfeit and start new game",
   lvl_easy: "★", lvl_normal: "★★", lvl_hard: "★★★", lvl_expert: "★★★★", lvl_master: "★★★★★",
   lvln_easy: "Looks only 1 move ahead, often blunders and forgets about its own King.",
   lvln_normal: "Looks ahead at your reply, protects its King and wins pieces back.",
@@ -523,20 +523,20 @@ en: {
   pn: "{1} {0}",
   n_K: "King", n_Q: "Queen", n_R: "Rook", n_B: "Bishop", n_N: "Knight", n_P: "Pawn", n_white: "White", n_black: "Black",
   n_meat: "meat", n_stone: "stone", n_rice: "rice",
-  p_title: "{0}", role_bot: "MACHINE ({0})", role_you: "YOU", bd_win: "WINNER", bd_think: "THINKING…", bd_turn: "TO MOVE", bd_wait: "WAITING",
+  p_title: "{0}", role_bot: "AI ({0})", role_you: "YOU", bd_win: "WINNER", bd_think: "THINKING…", bd_turn: "TO MOVE", bd_wait: "WAITING",
   ttl_poor: "Not enough resources", ttl_nocell: "No empty square around the King", ttl_summon: "Summon {0}",
   st_notstarted: "<b>Not started</b> · Press <b>New game</b> to choose a mode and start playing",
   st_win: "<b>{0} wins</b> — captured the {1}!", st_mate: "<b>{0} wins</b> — checkmated the {1}!", st_draw: "<b>Draw</b> — neither side has any moves left.",
-  st_bot: "<b>MACHINE's turn ({0})</b> · thinking…",
+  st_bot: "<b>AI's turn ({0})</b> · thinking…",
   st_summon: "<b>{0}'s turn</b> · Pick an empty square next to your King to place the <b>{1}</b> <span class=\"muted\">(Esc: cancel)</span>",
   st_sel: "<b>{0}'s turn</b> · Pick a destination for the <b>{1}</b> <span class=\"muted\">(Esc: cancel)</span>",
   st_nomove: "<b>{0}'s turn</b> · The <b>{1}</b> has no moves <span class=\"muted\">(Esc: cancel)</span>",
   st_idle: "<b>{0}'s turn</b> · Pick a piece to move, or press a piece in the side panel to summon it <span class=\"muted\">(costs a whole turn)</span>",
   w_mate: "⚠ Checkmate — no way to save the King!", w_check: "⚠ King under threat!",
   tl_board: "On board:", tl_move: "Move {0}",
-  go_you: "YOU WIN!", go_bot: "MACHINE WINS!", go_side: "{0} WINS!", go_draw: "DRAW",
+  go_you: "YOU WIN!", go_bot: "AI WINS!", go_side: "{0} WINS!", go_draw: "DRAW",
   gs_win: "The {0} was captured on move {1}.", gs_mate: "The {0} was checkmated on move {1}.", gs_draw: "Neither side has any moves left.",
-  l_new_bot: "New game — you play {0}, the machine plays {1} ({2}). White moves first.", l_new_pvp: "New game — 2 players. White moves first.",
+  l_new_bot: "New game — you play {0}, the AI plays {1} ({2}). White moves first.", l_new_pvp: "New game — 2 players. White moves first.",
   l_eatres: "{0} collects 1 {1}", l_cap: "{0} captures {1}", l_resp: " → {0} respawn on the board", l_move: "{0} moves",
   l_kcap: "{0} captures {1} — {2} wins!", l_mate: "Checkmate — {0} wins!", l_summon: "{0} summons {1} (−{2})",
   l_skip: "{0} has no moves left — turn skipped", l_draw: "Draw — neither side has any moves left."
