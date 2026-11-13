@@ -195,6 +195,7 @@ kbd{background:#3a2c18;border:1px solid var(--line);border-radius:5px;padding:1p
 .costtbl td:first-child{text-align:left;display:flex;align-items:center;gap:8px}
 .costtbl .ptile{width:30px;height:30px}
 .chk{margin:6px 0}
+#rulesStart img{width:18px;height:18px;vertical-align:-4px}
 .note{color:var(--muted);font-size:12.5px}
 #levelNote{line-height:1.4;min-height:2.8em}   /* chừa sẵn 2 dòng để popup không giãn ra khi đổi độ khó */
 .credit{margin-right:auto;align-self:center}
@@ -322,7 +323,7 @@ body.portrait .cbox{flex:0 0 calc((100% - 16px) / 3);min-width:0}
   <div class="card">
     <div class="langsw" id="langSw"><button data-lang="vi" title="Tiếng Việt" aria-label="Tiếng Việt"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#da251d"/><polygon fill="#ffff00" points="50,23 56.76,43.7 78.53,43.73 60.94,56.55 67.63,77.27 50,64.5 32.37,77.27 39.06,56.55 21.47,43.73 43.24,43.7"/></svg></button><button data-lang="en" title="English" aria-label="English"><svg viewBox="15 0 30 30" aria-hidden="true"><clipPath id="ukS"><path d="M0,0 v30 h60 v-30 z"/></clipPath><clipPath id="ukT"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath><g clip-path="url(#ukS)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#ukT)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg></button></div>
     <h2 data-i18n="brand">Cờ Vua Triệu Hồi</h2>
-    <p data-i18n="r_intro">Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với AI; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.</p>
+    <p data-i18n="r_intro">Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.</p>
     <h3 data-i18n="r_h_turn">Mỗi lượt chọn 1 trong 2</h3>
     <ul>
       <li data-i18n="r_move"><b>Đi quân</b>: nhấp quân của mình → nhấp ô đích (có chấm xanh). Các quân đi như cờ vua truyền thống.</li>
@@ -453,7 +454,7 @@ const I18N = {
 vi: {
   title: "Cờ Vua Triệu Hồi", brand: "Cờ Vua Triệu Hồi",
   b_rules: "Luật chơi", b_settings: "Cân bằng", b_new: "Ván mới", b_view: "Xem bàn cờ", cancel: "Huỷ",
-  r_intro: "Mặc định bạn cầm quân Trắng (ở dưới bàn cờ) đấu với AI; đổi bên, độ khó hoặc chơi 2 người chung một máy khi bấm <b>Ván mới</b>. Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.",
+  r_intro: "Mỗi bên bắt đầu chỉ với <b>1 Vua</b>. Hãy thu thập tài nguyên để triệu hồi quân, và <b>ăn Vua đối phương</b> để thắng.",
   r_h_turn: "Mỗi lượt chọn 1 trong 2",
   r_move: "<b>Đi quân</b>: nhấp quân của mình → nhấp ô đích (có chấm xanh). Các quân đi như cờ vua truyền thống; riêng <b>Tốt</b> còn được lùi 1 ô (không phong cấp).",
   r_summon: "<b>Triệu hồi</b>: nhấp quân trong bảng của mình (cần đủ tài nguyên) → nhấp 1 trong 8 ô trống quanh Vua. Triệu hồi tốn trọn 1 lượt.",
@@ -500,7 +501,7 @@ vi: {
 en: {
   title: "Summoning Chess", brand: "Summoning Chess",
   b_rules: "Rules", b_settings: "Balance", b_new: "New game", b_view: "View board", cancel: "Cancel",
-  r_intro: "By default you play White (at the bottom of the board) against the AI; change side, difficulty, or play 2 players on one device when you press <b>New game</b>. Each side starts with just <b>1 King</b>. Collect resources to summon pieces, and <b>capture the enemy King</b> to win.",
+  r_intro: "Each side starts with just <b>1 King</b>. Collect resources to summon pieces, and <b>capture the enemy King</b> to win.",
   r_h_turn: "Each turn, choose 1 of 2",
   r_move: "<b>Move</b>: click one of your pieces → click a destination square (green dot). Pieces move like in traditional chess; the <b>Pawn</b> may also step back 1 square (no promotion).",
   r_summon: "<b>Summon</b>: click a piece in your panel (you need enough resources) → click 1 of the 8 empty squares around your King. Summoning takes your whole turn.",
@@ -1231,7 +1232,7 @@ function fit() {
 
 /* ---------- MODAL: LUẬT & CÂN BẰNG ---------- */
 function fillRules() {
-  $("#rulesStart").innerHTML = RES.map(k => `${CONFIG.startRes[k]} ${RES_NAME[k]}`).join(", ");
+  $("#rulesStart").innerHTML = RES.map(k => `${CONFIG.startRes[k]} ${RES_NAME[k]} ${ico(k)}`).join(", ");
   $("#rulesCosts").innerHTML = SUMMONABLE.map(t => `<div class="cbox"><div class="ptile"><img src="${pieceSprite(t, "white")}" style="--k:${PIECE_K[t]}" alt=""></div><b>${PNAME[t]}</b><div class="cost">${RES.filter(k => costOf(t)[k]).map(k => `<span class="chip">${ico(k)}${costOf(t)[k] > 1 ? "×" + costOf(t)[k] : ""}</span>`).join(`<span class="plus">+</span>`)}</div></div>`).join("");
 }
 function openRules() { fillRules(); $("#mRules").hidden = false; }
