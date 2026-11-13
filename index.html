@@ -212,7 +212,7 @@ kbd{background:#3a2c18;border:1px solid var(--line);border-radius:5px;padding:1p
 .langsw svg{width:18px;height:18px;flex:none;border-radius:50%;box-shadow:0 0 0 1px rgba(0,0,0,.45)}
 .langsw button:hover{background:#4a3920}
 .langsw button.on{background:var(--gold);color:#3a2a00;border-color:var(--gold)}
-#segLevel button{min-width:0;padding:10px 6px}
+#segLevel button{min-width:0;padding:10px 2px;white-space:nowrap;letter-spacing:-1px}
 /* màu viền nút độ khó khi chưa chọn; khi chọn thì tô cả nền (Thường giữ vàng cam mặc định) */
 #segLevel button[data-v="easy"]{border-color:#9fd83c;background:rgba(159,216,60,.2)}
 #segLevel button[data-v="normal"]{border-color:#ffd24a;background:rgba(255,210,74,.2)}
@@ -331,7 +331,7 @@ body.portrait .costs{grid-template-columns:repeat(3,1fr)}
       <h3 data-i18n="m_side">Bạn cầm quân</h3>
       <div class="seg" id="segSide"><button data-v="white" data-i18n="m_white">Trắng (đi trước)</button><button data-v="black" data-i18n="m_black">Đen (đi sau)</button></div>
       <h3 data-i18n="m_level">Độ khó của máy</h3>
-      <div class="seg" id="segLevel"><button data-v="easy" data-i18n="lvl_easy">1★</button><button data-v="normal" data-i18n="lvl_normal">2★</button><button data-v="hard" data-i18n="lvl_hard">3★</button><button data-v="expert" data-i18n="lvl_expert">4★</button><button data-v="master" data-i18n="lvl_master">5★</button></div>
+      <div class="seg" id="segLevel"><button data-v="easy" data-i18n="lvl_easy">★</button><button data-v="normal" data-i18n="lvl_normal">★★</button><button data-v="hard" data-i18n="lvl_hard">★★★</button><button data-v="expert" data-i18n="lvl_expert">★★★★</button><button data-v="master" data-i18n="lvl_master">★★★★★</button></div>
       <p class="note" id="levelNote"></p>
     </div>
     <h3 data-i18n="m_theme">Màu bàn cờ</h3>
@@ -409,7 +409,7 @@ vi: {
   r_h_costs: "Giá triệu hồi", r_ok: "Đã hiểu",
   m_title: "Chế độ chơi", m_vs: "Đối thủ", m_bot: "Chơi với máy", m_pvp: "2 người (chung máy)",
   m_side: "Bạn cầm quân", m_white: "Trắng (đi trước)", m_black: "Đen (đi sau)", m_level: "Độ khó của máy", m_theme: "Màu bàn cờ", m_start: "Bắt đầu ván mới",
-  lvl_easy: "1★", lvl_normal: "2★", lvl_hard: "3★", lvl_expert: "4★", lvl_master: "5★",
+  lvl_easy: "★", lvl_normal: "★★", lvl_hard: "★★★", lvl_expert: "★★★★", lvl_master: "★★★★★",
   lvln_easy: "Chỉ nhìn 1 nước, hay đi ẩu và bỏ quên Vua của mình.",
   lvln_normal: "Tính trước nước đáp trả của bạn, biết giữ Vua và đòi lại quân.",
   lvln_hard: "Tính trước 3 bước (tính cả nước đáp trả của bạn).",
@@ -456,7 +456,7 @@ en: {
   r_h_costs: "Summon costs", r_ok: "Got it",
   m_title: "Game mode", m_vs: "Opponent", m_bot: "Play vs machine", m_pvp: "2 players (same device)",
   m_side: "You play", m_white: "White (moves first)", m_black: "Black (moves second)", m_level: "Machine difficulty", m_theme: "Board colors", m_start: "Start new game",
-  lvl_easy: "1★", lvl_normal: "2★", lvl_hard: "3★", lvl_expert: "4★", lvl_master: "5★",
+  lvl_easy: "★", lvl_normal: "★★", lvl_hard: "★★★", lvl_expert: "★★★★", lvl_master: "★★★★★",
   lvln_easy: "Looks only 1 move ahead, often blunders and forgets about its own King.",
   lvln_normal: "Looks ahead at your reply, protects its King and wins pieces back.",
   lvln_hard: "Looks 3 steps ahead (counting your replies).",
