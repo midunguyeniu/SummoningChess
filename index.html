@@ -19,7 +19,8 @@ html,body{margin:0}
 body{background:radial-gradient(1200px 700px at 50% -10%,#2b1f10 0%,var(--bg) 60%);color:var(--text);
   font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;min-height:100vh;
   -webkit-tap-highlight-color:transparent}
-button{font-family:inherit}
+button{font-family:inherit;transition:transform .12s ease-out,background-color .15s,filter .15s,opacity .15s}
+button:active:not(:disabled){transform:scale(.92)}   /* bấm nút: co nhỏ lại một chút */
 #app{width:fit-content;margin:0 auto;padding:12px 12px 28px}
 body.portrait #app{width:100%;padding:8px 8px 24px}
 
@@ -212,6 +213,9 @@ kbd{background:#3a2c18;border:1px solid var(--line);border-radius:5px;padding:1p
 #botOpts.off{opacity:.28;filter:grayscale(1)}
 #botOpts.off .seg button.on{background:#3a2c18;color:var(--text);border-color:var(--line)}   /* khoá thì không hiện lựa chọn đang chọn */
 #mRules .card{position:relative}
+/* Luật chơi: cao cố định (đủ cho bản dài nhất) để đổi vi/en popup không đổi kích thước; nút "Đã hiểu" luôn nằm đáy */
+#mRules .card{height:min(760px,calc(100vh - 28px));max-height:none}
+#mRules .card > .foot{position:sticky;bottom:0;background:var(--panel);padding:10px 0 20px;margin-bottom:-20px}   /* màn thấp phải cuộn: nút Đã hiểu vẫn dính ở đáy */
 .langsw{position:absolute;top:18px;right:22px;display:flex;gap:4px;z-index:2}
 .langsw button{background:#3a2c18;color:var(--text);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
 .langsw button{display:inline-flex;align-items:center;justify-content:center;padding:4px}
