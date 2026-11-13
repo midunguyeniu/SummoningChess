@@ -331,7 +331,7 @@ body.portrait .costs{grid-template-columns:repeat(3,1fr)}
       <h3 data-i18n="m_side">Bạn cầm quân</h3>
       <div class="seg" id="segSide"><button data-v="white" data-i18n="m_white">Trắng (đi trước)</button><button data-v="black" data-i18n="m_black">Đen (đi sau)</button></div>
       <h3 data-i18n="m_level">Độ khó của máy</h3>
-      <div class="seg" id="segLevel"><button data-v="easy" data-i18n="lvl_easy">Dễ</button><button data-v="normal" data-i18n="lvl_normal">Thường</button><button data-v="hard" data-i18n="lvl_hard">Khó</button><button data-v="expert" data-i18n="lvl_expert">Expert</button><button data-v="master" data-i18n="lvl_master">Master</button></div>
+      <div class="seg" id="segLevel"><button data-v="easy" data-i18n="lvl_easy">1★</button><button data-v="normal" data-i18n="lvl_normal">2★</button><button data-v="hard" data-i18n="lvl_hard">3★</button><button data-v="expert" data-i18n="lvl_expert">4★</button><button data-v="master" data-i18n="lvl_master">5★</button></div>
       <p class="note" id="levelNote"></p>
     </div>
     <h3 data-i18n="m_theme">Màu bàn cờ</h3>
@@ -409,7 +409,7 @@ vi: {
   r_h_costs: "Giá triệu hồi", r_ok: "Đã hiểu",
   m_title: "Chế độ chơi", m_vs: "Đối thủ", m_bot: "Chơi với máy", m_pvp: "2 người (chung máy)",
   m_side: "Bạn cầm quân", m_white: "Trắng (đi trước)", m_black: "Đen (đi sau)", m_level: "Độ khó của máy", m_theme: "Màu bàn cờ", m_start: "Bắt đầu ván mới",
-  lvl_easy: "Dễ", lvl_normal: "Thường", lvl_hard: "Khó", lvl_expert: "Expert", lvl_master: "Master",
+  lvl_easy: "1★", lvl_normal: "2★", lvl_hard: "3★", lvl_expert: "4★", lvl_master: "5★",
   lvln_easy: "Chỉ nhìn 1 nước, hay đi ẩu và bỏ quên Vua của mình.",
   lvln_normal: "Tính trước nước đáp trả của bạn, biết giữ Vua và đòi lại quân.",
   lvln_hard: "Tính trước 3 bước (tính cả nước đáp trả của bạn).",
@@ -456,7 +456,7 @@ en: {
   r_h_costs: "Summon costs", r_ok: "Got it",
   m_title: "Game mode", m_vs: "Opponent", m_bot: "Play vs machine", m_pvp: "2 players (same device)",
   m_side: "You play", m_white: "White (moves first)", m_black: "Black (moves second)", m_level: "Machine difficulty", m_theme: "Board colors", m_start: "Start new game",
-  lvl_easy: "Easy", lvl_normal: "Normal", lvl_hard: "Hard", lvl_expert: "Expert", lvl_master: "Master",
+  lvl_easy: "1★", lvl_normal: "2★", lvl_hard: "3★", lvl_expert: "4★", lvl_master: "5★",
   lvln_easy: "Looks only 1 move ahead, often blunders and forgets about its own King.",
   lvln_normal: "Looks ahead at your reply, protects its King and wins pieces back.",
   lvln_hard: "Looks 3 steps ahead (counting your replies).",
@@ -530,7 +530,7 @@ const CONFIG_DEFAULT = {
 let CONFIG = clone(CONFIG_DEFAULT);
 /* vân gỗ rất nhẹ phủ lên ô cờ (chỉ theme gỗ): sọc dọc mảnh + chuyển sáng tối từ trên xuống */
 const WOOD_GRAIN = "repeating-linear-gradient(90deg, rgba(0,0,0,.055) 0 2px, rgba(255,255,255,.045) 2px 5px, rgba(0,0,0,.03) 5px 9px, rgba(255,255,255,.03) 9px 12px), linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,.07))";
-const THEMES = { "1": { name: "Theme 1", d: "#613E3E", l: "#885C4F" }, "2": { name: "Theme 2", d: "#4A4948", l: "#696868" }, "3": { name: "Theme 3", d: "#B58963", l: "#EFDAB6" }, "4": { name: "Theme 4", d: "#729053", l: "#E6E6CA" } };
+const THEMES = { "1": { name: "Theme 1", d: "#613E3E", l: "#885C4F" }, "2": { name: "Theme 2", d: "#729053", l: "#E6E6CA" }, "3": { name: "Theme 3", d: "#B58963", l: "#EFDAB6" }, "4": { name: "Theme 4", d: "#4A4948", l: "#696868" } };
 let MODE = { vs: "bot", human: "white", level: "normal", theme: "1" };      // vs: "bot" | "pvp"
 const isBot = color => MODE.vs === "bot" && color !== MODE.human;
 
